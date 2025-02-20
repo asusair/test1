@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #FAFAFA;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 70%;
+}
+
+/* 轮播区域样式 */
+.carousel-section {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel {
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.carousel-slide:nth-child(1) {
+    background: linear-gradient(135deg, #6C8EB4 0%, #384F66 100%);
+}
+
+.carousel-slide:nth-child(2) {
+    background: linear-gradient(135deg, #384F66 0%, #1A2533 100%);
+}
+
+.carousel-slide:nth-child(3) {
+    background: linear-gradient(135deg, #1A2533 0%, #0D1319 100%);
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.slide-content h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.slide-content p {
+    font-size: 1.5em;
+    opacity: 0.8;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #fff;
+}
+
+/* 个人简介区样式 */
+.profile-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.profile-section h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #2C3E50;
+}
+
+.bio {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* 对话区域样式 */
+.chat-section {
+    padding: 60px 0;
+    border-top: 1px solid #EEEEEE;
+}
+
+.chat-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.chat-history {
+    height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.message {
+    margin: 12px 0;
+    max-width: 80%;
+    animation: fadeIn 0.3s ease;
+}
+
+.message.user {
+    margin-left: auto;
+    background: #6C8EB4;
+    color: white;
+    border-radius: 16px 16px 4px 16px;
+    padding: 12px 16px;
+}
+
+.message.ai {
+    margin-right: auto;
+    background: #F5F5F5;
+    color: #333;
+    border-radius: 16px 16px 16px 4px;
+    padding: 12px 16px;
+}
+
+.chat-input-area {
+    border-top: 1px solid #E0E0E0;
+    padding: 15px;
+    position: relative;
+}
+
+.input-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+textarea {
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 8px 0;
+    resize: none;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    max-height: 100px;
+}
+
+textarea:focus {
+    border-bottom-color: #6C8EB4;
+}
+
+.send-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.send-button:hover {
+    background: #6C8EB4;
+}
+
+.send-button svg {
+    fill: #6C8EB4;
+    transition: fill 0.2s ease;
+}
+
+.send-button:hover svg {
+    fill: white;
+}
+
+/* 打字指示器 */
+.typing-indicator {
+    padding: 8px;
+    display: flex;
+    gap: 4px;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: #6C8EB4;
+    border-radius: 50%;
+    animation: bounce 0.5s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 社交媒体区域 */
+.social-section {
+    padding: 40px 0;
+    background: #fff;
+    border-top: 1px solid #EEEEEE;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-link {
+    color: #666;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    color: #6C8EB4;
+}
+
+.social-link svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* 动画 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    
+    .chat-history {
+        height: 60vh;
+    }
+}
